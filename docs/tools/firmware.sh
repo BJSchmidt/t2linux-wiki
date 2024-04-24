@@ -57,6 +57,8 @@ case "$os" in
 		mountpoint=$(mktemp -d)
 		workdir=$(mktemp -d)
 		echo "Installing Wi-Fi and Bluetooth firmware"
+  		#Create /lib/firmware it if it doesn't exist
+    		mkdir -p /lib/firmware
 		if [[ ${1-default} = -v ]]
 		then
 			sudo mount -v /dev/nvme0n1p1 $mountpoint
